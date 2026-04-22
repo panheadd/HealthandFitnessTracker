@@ -1,11 +1,13 @@
 namespace HealthandFitnessTrackerAPI.Models;
+using Google.Cloud.Firestore;
 
+[FirestoreData]
 public class Session
 {
-    public string Id { get; set; } = Guid.NewGuid().ToString();
-    public string UserId { get; set; }
-    public string TrainerId { get; set; }
+    [FirestoreProperty] public string Id { get; set; } = Guid.NewGuid().ToString();
+    [FirestoreProperty] public string UserId { get; set; }
+    [FirestoreProperty] public string TrainerId { get; set; }
 
-    public DateTime ScheduledAt { get; set; }
-    public bool IsCompleted { get; set; }
+    [FirestoreProperty] public DateTime ScheduledAt { get; set; }
+    [FirestoreProperty] public bool IsCompleted { get; set; }
 }

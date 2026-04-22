@@ -1,19 +1,21 @@
 namespace HealthandFitnessTrackerAPI.Models;
+using Google.Cloud.Firestore;
 
+[FirestoreData]
 public class WorkoutPlan
 {
-    public string Id { get; set; } = Guid.NewGuid().ToString();
+    [FirestoreProperty] public string Id { get; set; } = Guid.NewGuid().ToString();
 
-    public string Title { get; set; }       
-    public string Description { get; set; }
+    [FirestoreProperty] public string Title { get; set; }       
+    [FirestoreProperty] public string Description { get; set; }
 
-    public string UserId { get; set; }         
-    public string TrainerId { get; set; }      
+    [FirestoreProperty] public string UserId { get; set; }         
+    [FirestoreProperty] public string TrainerId { get; set; }      
 
-    public List<WorkoutDay> Days { get; set; } = new();
+    [FirestoreProperty] public List<WorkoutDay> Days { get; set; } = new();
 
-    public string GoalType { get; set; }      
+    [FirestoreProperty] public string GoalType { get; set; }      
 
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-    public bool IsActive { get; set; } = true;
+    [FirestoreProperty] public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    [FirestoreProperty] public bool IsActive { get; set; } = true;
 }

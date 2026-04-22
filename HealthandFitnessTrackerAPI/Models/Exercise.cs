@@ -1,10 +1,12 @@
 namespace HealthandFitnessTrackerAPI.Models;
+using Google.Cloud.Firestore;
 
+[FirestoreData]
 public class Exercise
 {
-    public string Name { get; set; }          
-    public int Sets { get; set; }
-    public int Reps { get; set; }
-    public int RestSeconds { get; set; }
-    public string Notes { get; set; }
+    [FirestoreProperty] public string Name { get; set; }          
+    [FirestoreProperty] public int Sets { get; set; }
+    [FirestoreProperty] public int Reps { get; set; }
+    [FirestoreProperty] public int RestSeconds { get; set; }
+    [FirestoreProperty] public string Notes { get; set; }
 }

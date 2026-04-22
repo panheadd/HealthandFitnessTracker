@@ -1,8 +1,10 @@
 namespace HealthandFitnessTrackerAPI.Models;
+using Google.Cloud.Firestore;
 
+[FirestoreData]
 public class Goal
 {
-    public string Type { get; set; } 
-    public double TargetValue { get; set; }
-    public double CurrentValue { get; set; }
+    [FirestoreProperty] public string Type { get; set; } 
+    [FirestoreProperty] public double TargetValue { get; set; }
+    [FirestoreProperty] public double CurrentValue { get; set; }
 }

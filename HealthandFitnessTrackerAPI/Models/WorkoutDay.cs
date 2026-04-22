@@ -1,8 +1,10 @@
 namespace HealthandFitnessTrackerAPI.Models;
+using Google.Cloud.Firestore;
 
+[FirestoreData]
 public class WorkoutDay
 {
-    public string DayName { get; set; }  
+    [FirestoreProperty] public string DayName { get; set; }  
 
-    public List<Exercise> Exercises { get; set; } = new();
+    [FirestoreProperty] public List<Exercise> Exercises { get; set; } = new();
 }
