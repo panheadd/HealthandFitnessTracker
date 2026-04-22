@@ -1,8 +1,5 @@
 HEALTH & FITNESS TRACKER API - ENDPOINTS
 
-BASE URL:
-http://localhost:5000
-
 ========================
 USER ENDPOINTS
 ========================
@@ -16,6 +13,7 @@ DELETE /api/users/{id}
 TRAINER ENDPOINTS
 ========================
 POST   /api/trainers
+
 GET    /api/trainers
 
 ========================
