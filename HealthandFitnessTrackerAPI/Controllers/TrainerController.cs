@@ -28,4 +28,23 @@ public class TrainerController : ControllerBase
     {
         return Ok(await _service.GetAll());
     }
+    
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(string id)
+    {
+        var trainer = await _service.Get(id);
+        return trainer == null ? NotFound() : Ok(trainer);
+    }
+    public async Task<IActionResult> Update(string id, Trainer trainer)
+    {
+        await _service.Update(id, trainer);
+        return Ok();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
+    {
+        await _service.Delete(id);
+        return Ok();
+    }
 }
