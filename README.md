@@ -1,5 +1,6 @@
 HEALTH & FITNESS TRACKER API - ENDPOINTS
 
+
 USER ENDPOINTS
 
 POST   /api/users
@@ -13,11 +14,13 @@ PUT    /api/users/{id}
 DELETE /api/users/{id}
 
 
+
 TRAINER ENDPOINTS
 
 POST   /api/trainers
 
 GET    /api/trainers
+
 
 
 WORKOUT PLAN ENDPOINTS
@@ -28,6 +31,7 @@ GET    /api/workout-plans
 
 GET    /api/workout-plans/user/{userId}
 
+
 SESSION ENDPOINTS
 
 POST   /api/sessions
@@ -35,6 +39,7 @@ POST   /api/sessions
 GET    /api/sessions
 
 PUT    /api/sessions/complete/{id}
+
 
 EXERCISE LOG ENDPOINTS
 
