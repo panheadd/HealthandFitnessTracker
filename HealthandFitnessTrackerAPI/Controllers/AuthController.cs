@@ -21,6 +21,19 @@ public class AuthController : ControllerBase
     [HttpPost("register/user")]
     public async Task<IActionResult> RegisterUser(RegisterUserDto dto)
     {
+        var users = await _userService.GetAll();
+
+        var existingUser = users
+            .FirstOrDefault(t => t.Email == dto.Email);
+
+        if (existingUser != null)
+        {
+            return BadRequest(new
+            {
+                message = "Email already exists"
+            });
+        }
+        
         var user = new User
         {
             Username = dto.Username,
@@ -41,6 +54,19 @@ public class AuthController : ControllerBase
     [HttpPost("register/trainer")]
     public async Task<IActionResult> RegisterTrainer(RegisterTrainerDto dto)
     {
+        var trainers = await _trainerService.GetAll();
+
+        var existingTrainer = trainers
+            .FirstOrDefault(t => t.Email == dto.Email);
+
+        if (existingTrainer != null)
+        {
+            return BadRequest(new
+            {
+                message = "Email already exists"
+            });
+        }
+
         var trainer = new Trainer
         {
             Name = dto.Name,
